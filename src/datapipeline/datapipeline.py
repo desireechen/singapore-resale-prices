@@ -59,7 +59,7 @@ class Datapipeline():
                             ('ord', ordinal_transformer, self.ordinal_features)])
 
     def process_data(self):
-        df = fetch_data(r'data/resale-flat-prices-based-on-registration-date-from-2016-to-2017.csv')
+        df = fetch_data(r'data/raw/resale-flat-prices-from-2016-to-2017.csv')
         df = df.drop_duplicates(keep='last')
         df = regroup_storey(df)
         df = make_datetime(df)
